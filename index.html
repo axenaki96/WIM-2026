@@ -46,22 +46,23 @@ nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--rule);paddin
 /* PAGE 1 — CONSTELLATION */
 #page-constellation{min-height:calc(100vh - 54px);display:none;flex-direction:row;}
 #page-constellation.on{display:flex;}
-.const-left{flex:0 0 420px;padding:52px 48px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--rule);background:var(--bg);position:relative;z-index:1;}
-.const-eyebrow{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
-.const-title{font-family:'Playfair Display',serif;font-size:40px;line-height:1.1;margin-bottom:12px;color:var(--text);}
+.const-left{flex:0 0 480px;padding:52px 52px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--rule);background:var(--bg);position:relative;z-index:1;overflow-y:auto;}
+
+.const-eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:18px;}
+.const-title{font-family:'Playfair Display',serif;font-size:58px;line-height:1.05;margin-bottom:18px;color:var(--text);}
 .const-title em{font-style:italic;color:var(--s1);}
-.const-sub{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:26px;max-width:320px;}
-.const-quote{border-left:2px solid var(--s1);padding:12px 18px;background:var(--s1l);border-radius:0 8px 8px 0;margin-bottom:26px;}
-.const-quote p{font-size:13px;color:var(--s1);line-height:1.65;font-style:italic;font-family:'Playfair Display',serif;}
-.const-quote cite{display:block;margin-top:8px;font-size:11px;color:var(--muted);font-style:normal;}
-.why-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px;}
-.why-pill{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid;background:var(--bg);}
-.const-legend{display:flex;flex-direction:column;gap:8px;}
-.leg-row{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
-.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.leg-line{width:22px;height:1px;background:rgba(96,88,200,0.35);flex-shrink:0;}
+.const-sub{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:28px;max-width:340px;}
+.const-quote{border-left:3px solid var(--s1);padding:16px 22px;background:var(--s1l);border-radius:0 10px 10px 0;margin-bottom:28px;}
+.const-quote p{font-size:15px;color:var(--s1);line-height:1.7;font-style:italic;font-family:'Playfair Display',serif;}
+.const-quote cite{display:block;margin-top:10px;font-size:12px;color:var(--muted);font-style:normal;}
+.why-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;}
+.why-pill{font-size:13px;padding:7px 16px;border-radius:20px;border:1px solid;background:var(--bg);}
+.const-legend{display:flex;flex-direction:column;gap:10px;}
+.leg-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.leg-line{width:26px;height:1px;background:rgba(96,88,200,0.35);flex-shrink:0;}
 .const-right{flex:1;position:relative;overflow:hidden;background:#0d1018;}
-#starfieldBg{position:absolute;inset:0;z-index:0;}
+#starfieldBg{position:absolute;inset:0;z-index:0;width:100%;height:100%;}
 #constCanvas{position:relative;z-index:1;display:block;}
 
 /* PAGE 2 — STATIONS */
@@ -219,6 +220,22 @@ nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--rule);paddin
 .sync-dot{width:6px;height:6px;border-radius:50%;background:var(--s2);flex-shrink:0;}
 .sync-dot.err{background:#c84820;}
 .sync-dot.pending{background:#a87010;animation:blink 1s ease-in-out infinite;}
+
+/* PAGE 0 — SCIENCE */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+#page-science{background:var(--bg);}
+.sci-card{background:var(--bg);border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:26px 22px;display:flex;flex-direction:column;gap:0;transition:box-shadow .2s;}
+.sci-card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07);}
+.sci-s{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px;}
+.sci-theme{font-family:'Times New Roman','IM Fell English',Georgia,serif;font-size:18px;font-weight:700;color:#000;line-height:1.25;margin-bottom:16px;}
+.sci-stat{font-family:'Times New Roman','IM Fell English',Georgia,serif;font-size:52px;font-weight:700;line-height:1;color:#000;margin-bottom:6px;letter-spacing:-1px;}
+.sci-stat-lbl{font-family:'Times New Roman',Georgia,serif;font-size:12px;color:#333;line-height:1.6;margin-bottom:12px;font-style:italic;}
+.sci-divider{height:1.5px;background:rgba(0,0,0,0.12);margin:12px 0;}
+.sci-finding{font-family:'Times New Roman',Georgia,serif;font-size:13px;color:#222;line-height:1.75;flex:1;margin-bottom:10px;}
+.sci-finding strong{color:#000;font-weight:700;}
+.sci-source{font-family:'DM Sans',sans-serif;font-size:9px;color:#888;line-height:1.5;font-style:italic;letter-spacing:.02em;}
+@media(max-width:1100px){#sci-cards{grid-template-columns:repeat(3,1fr)!important;}}
+@media(max-width:700px){#sci-cards{grid-template-columns:1fr 1fr!important;}}
 </style>
 </head>
 <body>
@@ -231,6 +248,7 @@ nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--rule);paddin
     Circular Talent
   </div>
   <div class="nav-tabs">
+    <button class="nav-tab" onclick="showPage('science',this)">Science <span class="ntag">Context</span></button>
     <button class="nav-tab on" onclick="showPage('constellation',this)">Constellation <span class="ntag">Intro</span></button>
     <button class="nav-tab" onclick="showPage('stations',this)">5 Stations <span class="ntag">Team</span></button>
     <button class="nav-tab" onclick="showPage('forms',this)">Answer Forms <span class="ntag">Live</span></button>
@@ -242,6 +260,94 @@ nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--rule);paddin
     <div class="sync-bar" id="sync-bar"><div class="sync-dot" id="sync-dot"></div><span id="sync-msg">Connected</span></div>
   </div>
 </nav>
+
+<!-- ══════════════════════════════════
+     PAGE 0 — SCIENCE / RESEARCH CONTEXT
+══════════════════════════════════ -->
+<div class="page" id="page-science">
+  <div style="padding:48px 56px 72px;max-width:1200px;margin:0 auto;">
+
+    <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:20px;">Before we begin · what science tells us</div>
+    <div style="font-family:'Times New Roman',Georgia,serif;font-size:42px;font-weight:700;line-height:1.1;color:#000;margin-bottom:12px;">
+      The research already knew<br><em style="color:var(--s1);font-weight:400;">what this room is about to say.</em>
+    </div>
+    <div style="font-family:'Times New Roman',Georgia,serif;font-size:16px;color:#333;line-height:1.75;max-width:600px;margin-bottom:40px;">
+      Five stations. Five themes. Each one has a body of science behind it — from psychology, career research, migration studies, and the mining industry itself. Here is what the evidence says, before you add your voice to it.
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:40px;" id="sci-cards">
+
+      <!-- S1 — Non-linear paths -->
+      <div class="sci-card" style="border-top:3px solid #6058c8;">
+        <div class="sci-s" style="color:#6058c8;">Station 1</div>
+        <div class="sci-theme">The non-linear path</div>
+        <div class="sci-stat" style="color:#6058c8;">244</div>
+        <div class="sci-stat-lbl">career transition studies reviewed in the largest systematic review to date (2023)</div>
+        <div class="sci-divider"></div>
+        <div class="sci-finding">Research shows the pace of career transitions has <strong>accelerated dramatically</strong> since 1980. Non-linear trajectories are now the statistical norm, not the exception — yet professionals still treat them as personal failures rather than structural realities.</div>
+        <div class="sci-source">Mussagulova et al., Frontiers in Psychology, 2023</div>
+      </div>
+
+      <!-- S2 — Skills -->
+      <div class="sci-card" style="border-top:3px solid #1a9068;">
+        <div class="sci-s" style="color:#1a9068;">Station 2</div>
+        <div class="sci-theme">What mining built</div>
+        <div class="sci-stat" style="color:#1a9068;">71%</div>
+        <div class="sci-stat-lbl">of mining leaders say the talent shortage is holding back production targets (McKinsey, 2022)</div>
+        <div class="sci-divider"></div>
+        <div class="sci-finding">The skills built in mining — crisis decision-making, cross-cultural communication, complex systems management — are among the most in-demand capabilities across energy transition, technology, and public policy. The industry <strong>undersells what it creates.</strong></div>
+        <div class="sci-source">McKinsey Metals & Mining Report, 2023 · CA Mining / CA Energy Analysis, 2024</div>
+      </div>
+
+      <!-- S3 — Possibility -->
+      <div class="sci-card" style="border-top:3px solid #c84820;">
+        <div class="sci-s" style="color:#c84820;">Station 3</div>
+        <div class="sci-theme">Where skills travel</div>
+        <div class="sci-stat" style="color:#c84820;">15%</div>
+        <div class="sci-stat-lbl">of the global mining workforce are women — and the drop from entry to C-suite is the steepest of any major industry</div>
+        <div class="sci-divider"></div>
+        <div class="sci-finding">Renewable energy, policy, and technology sectors are <strong>actively seeking</strong> professionals with operational experience in extractives. Mining engineers, geologists, and HSE specialists are identified as some of the most transferable talent in the energy transition workforce.</div>
+        <div class="sci-source">World Bank Breaking Barriers Report, 2024 · IGF Women and the Mine of the Future, 2023</div>
+      </div>
+
+      <!-- S4 — The pull -->
+      <div class="sci-card" style="border-top:3px solid #1860b8;">
+        <div class="sci-s" style="color:#1860b8;">Station 4</div>
+        <div class="sci-theme">The pull to return</div>
+        <div class="sci-stat" style="color:#1860b8;">"Double<br>estrangement"</div>
+        <div class="sci-stat-lbl">the documented experience of professionals who leave — not fully at home abroad, not fully at home at origin</div>
+        <div class="sci-divider"></div>
+        <div class="sci-finding">Research on global professionals shows the desire to contribute to one's origin country does not diminish with time abroad — it evolves. <strong>Diaspora professionals</strong> are increasingly recognised as strategic assets for industrial development in mineral-rich nations.</div>
+        <div class="sci-source">Hsu & Tripathi, Social Sciences Research Journal, 2025 · UNCTAD Skills Development in Mining, 2018</div>
+      </div>
+
+      <!-- S5 — Agency -->
+      <div class="sci-card" style="border-top:3px solid #a87010;">
+        <div class="sci-s" style="color:#a87010;">Station 5</div>
+        <div class="sci-theme">The next chapter</div>
+        <div class="sci-stat" style="color:#a87010;">13%</div>
+        <div class="sci-stat-lbl">of mining C-suite roles are held by women — mining ranks last among all major global industries for female leadership</div>
+        <div class="sci-divider"></div>
+        <div class="sci-finding">Studies on career agency show that professionals who articulate a clear sense of direction — even without a specific plan — report <strong>significantly higher confidence</strong> and are more likely to act on opportunities when they arise. Naming it matters.</div>
+        <div class="sci-source">S&P Global Gender in Mining, 2020 · Frontiers in Psychology Career Transitions Review, 2023</div>
+      </div>
+
+    </div>
+
+    <!-- bottom strip -->
+    <div style="background:var(--bg2);border:1px solid var(--rule);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:280px;">
+        <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#888;margin-bottom:8px;">Why this matters for today</div>
+        <div style="font-family:'Times New Roman',Georgia,serif;font-size:20px;font-weight:700;color:#000;line-height:1.45;">The data describes a room full of people whose careers are more valuable than the industry has told them — and whose next chapter is more open than they may believe.</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button onclick="showPage('constellation', document.querySelectorAll('.nav-tab')[0])" style="padding:11px 22px;border-radius:10px;border:none;background:var(--s1);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;">Begin the constellation →</button>
+        <button onclick="showPage('forms', document.querySelectorAll('.nav-tab')[2])" style="padding:11px 22px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;">Jump to forms</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- PAGE 1 — CONSTELLATION -->
 <div class="page on" id="page-constellation">
@@ -265,8 +371,8 @@ nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--rule);paddin
     </div>
   </div>
   <div class="const-right">
-    <canvas id="starfieldBg"></canvas>
-    <canvas id="constCanvas" style="position:absolute;top:0;left:0;"></canvas>
+    <canvas id="starfieldBg" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+    <canvas id="constCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
   </div>
 </div>
 
@@ -478,34 +584,342 @@ function initConstellation(){
   const sf=document.getElementById('starfieldBg');
   const cc=document.getElementById('constCanvas');
   const par=sf.parentElement;
-  function resize(){sf.width=cc.width=par.offsetWidth;sf.height=cc.height=par.offsetHeight;}
-  resize();window.addEventListener('resize',resize);
+
+  function setSize(){
+    sf.width=cc.width=par.offsetWidth||window.innerWidth;
+    sf.height=cc.height=par.offsetHeight||(window.innerHeight-54);
+  }
+  setSize();
+  window.addEventListener('resize',()=>{setSize();makeAll();});
+
   const sfCtx=sf.getContext('2d');
+  const ccCtx=cc.getContext('2d');
+
+  /* ── STARS: 500, varied sizes, colours, twinkle speeds ── */
   let stars=[];
   function makeStars(){
     stars=[];
     const W=sf.width,H=sf.height;
-    for(let i=0;i<220;i++){stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.2,base:Math.random()*0.55+0.1,speed:Math.random()*0.008+0.002,phase:Math.random()*Math.PI*2,color:Math.random()>0.85?'#b8c8ff':Math.random()>0.7?'#ffd8b0':'#ffffff'});}
+    for(let i=0;i<500;i++){
+      const big=i<18;
+      const mid=i<80&&!big;
+      stars.push({
+        x:Math.random()*W, y:Math.random()*H,
+        r:big?Math.random()*3+1.8:mid?Math.random()*1.4+0.8:Math.random()*0.7+0.1,
+        base:big?0.85:mid?0.6:Math.random()*0.45+0.08,
+        speed:big?0.003+Math.random()*0.004:Math.random()*0.012+0.002,
+        phase:Math.random()*Math.PI*2,
+        color:i%7===0?'#d0e0ff':i%7===1?'#ffddb0':i%7===2?'#ffcccc':i%7===3?'#ccffee':'#ffffff',
+        big, mid
+      });
+    }
   }
-  makeStars();window.addEventListener('resize',makeStars);
-  const nodes=[{x:.48,y:.12,r:9,c:'#7b72e0',label:'You',pulse:true,ring:true},{x:.72,y:.22,r:6,c:'#e06030',label:'Canada'},{x:.22,y:.26,r:6,c:'#22b07d',label:'Fintech'},{x:.78,y:.42,r:5,c:'#888',label:'Return'},{x:.14,y:.48,r:6,c:'#e06030',label:'Australia'},{x:.60,y:.54,r:5,c:'#22b07d',label:'Tech'},{x:.30,y:.62,r:6,c:'#7b72e0',label:'Mining'},{x:.76,y:.66,r:5,c:'#888',label:'Back'},{x:.12,y:.72,r:5,c:'#22b07d',label:'Energy'},{x:.50,y:.80,r:7,c:'#e06030',label:'Home'},{x:.38,y:.37,r:5,c:'#888',label:'Pivot'},{x:.64,y:.34,r:4,c:'#7b72e0',label:'Lead'},{x:.26,y:.50,r:4,c:'#22b07d',label:'Policy'},{x:.55,y:.68,r:4,c:'#e06030',label:'Chile'}];
+
+  /* ── SHOOTING STARS: more frequent, longer tails ── */
+  let shooters=[];
+  function maybeShoot(W,H){
+    if(Math.random()>0.008)return;
+    const fromRight=Math.random()>0.5;
+    shooters.push({
+      x:fromRight?W:Math.random()*W*0.5,
+      y:Math.random()*H*0.6,
+      vx:fromRight?-(W*0.015+Math.random()*W*0.01):W*0.012+Math.random()*W*0.008,
+      vy:H*0.005+Math.random()*H*0.006,
+      life:1, maxLen:Math.random()*120+80,
+      color:Math.random()>0.5?'#ffffff':Math.random()>0.5?'#cce0ff':'#ffe8cc'
+    });
+  }
+
+  /* ── NEBULAE: 6, vivid, bigger ── */
+  let nebulae=[];
+  function makeNebulae(W,H){
+    nebulae=[
+      {x:W*0.72,y:H*0.14,r:W*0.22,c:'rgba(120,90,240,0.07)'},
+      {x:W*0.28,y:H*0.68,r:W*0.18,c:'rgba(30,160,110,0.07)'},
+      {x:W*0.58,y:H*0.48,r:W*0.16,c:'rgba(210,80,40,0.05)'},
+      {x:W*0.88,y:H*0.58,r:W*0.14,c:'rgba(24,110,200,0.06)'},
+      {x:W*0.15,y:H*0.28,r:W*0.13,c:'rgba(200,160,40,0.04)'},
+      {x:W*0.48,y:H*0.82,r:W*0.12,c:'rgba(180,60,140,0.04)'},
+    ];
+  }
+
+  /* ── PLANETS ── */
+  let planets=[];
+  function makePlanets(W,H){
+    planets=[
+      {x:W*0.82,y:H*0.12,r:26,ringColor:'rgba(200,140,80,0.45)',ringRx:54,ringRy:11,rings:true,
+       bands:['#c8804a','#b87040','#d49060','#a86030']},
+      {x:W*0.08,y:H*0.82,r:18,ringColor:'rgba(100,160,220,0.4)',ringRx:37,ringRy:8,rings:true,
+       bands:['#3a6090','#4a70a0','#2a5080','#5a80b0']},
+      {x:W*0.88,y:H*0.55,r:10,rings:false,
+       bands:['#904040','#a05050','#804040']},
+      {x:W*0.52,y:H*0.05,r:5,rings:false,
+       bands:['#aaaaaa','#888888','#bbbbbb']},
+    ];
+  }
+
+  /* ── ASTEROID BELT ── */
+  let asteroids=[];
+  function makeAsteroids(W,H){
+    asteroids=[];
+    const cx=W*0.70,cy=H*0.38,ra=W*0.23,rb=H*0.15;
+    for(let i=0;i<48;i++){
+      const ang=Math.random()*Math.PI*2;
+      const sp=0.88+Math.random()*0.24;
+      asteroids.push({
+        ang, speed:(Math.random()>0.5?1:-1)*(0.00018+Math.random()*0.00025),
+        cx,cy,ra:ra*sp,rb:rb*sp,
+        r:Math.random()*2.6+0.5,
+        alpha:0.4+Math.random()*0.5,
+        phase:Math.random()*Math.PI*2,
+        color:Math.random()>0.5?'180,170,155':'150,140,125'
+      });
+    }
+  }
+
+  /* ── ORBITAL PARTICLES around each node ── */
+  let orbits=[];
+  function makeOrbits(){
+    orbits=[];
+    nodes.forEach((n,ni)=>{
+      const count=n.pulse?6:3;
+      for(let i=0;i<count;i++){
+        orbits.push({
+          ni, ang:Math.random()*Math.PI*2,
+          radius:n.r*(1.8+Math.random()*1.4),
+          speed:(Math.random()>0.5?1:-1)*(0.008+Math.random()*0.014),
+          r:Math.random()*1.8+0.4,
+          alpha:0.5+Math.random()*0.4,
+          color:n.c
+        });
+      }
+    });
+  }
+
+  /* ── NODES ── */
+  const nodes=[
+    {x:.48,y:.14,r:14,c:'#9088f0',label:'You',pulse:true,ring:true,labelSize:14},
+    {x:.70,y:.24,r:9,c:'#e06030',label:'Canada',labelSize:12},
+    {x:.20,y:.28,r:9,c:'#22b07d',label:'Fintech',labelSize:12},
+    {x:.76,y:.44,r:7,c:'#aaaaaa',label:'Return',labelSize:11},
+    {x:.12,y:.50,r:9,c:'#e06030',label:'Australia',labelSize:12},
+    {x:.60,y:.54,r:8,c:'#22b07d',label:'Tech',labelSize:11},
+    {x:.28,y:.64,r:9,c:'#9088f0',label:'Mining',labelSize:12},
+    {x:.76,y:.68,r:7,c:'#aaaaaa',label:'Back',labelSize:11},
+    {x:.10,y:.74,r:8,c:'#22b07d',label:'Energy',labelSize:11},
+    {x:.48,y:.82,r:11,c:'#e06030',label:'Home',labelSize:13},
+    {x:.36,y:.38,r:7,c:'#aaaaaa',label:'Pivot',labelSize:11},
+    {x:.62,y:.35,r:6,c:'#9088f0',label:'Lead',labelSize:11},
+    {x:.24,y:.52,r:6,c:'#22b07d',label:'Policy',labelSize:11},
+    {x:.55,y:.68,r:6,c:'#e06030',label:'Chile',labelSize:11},
+  ];
   const arcs=[[0,1],[0,2],[1,3],[2,4],[3,7],[4,5],[5,6],[6,9],[7,8],[1,5],[2,10],[10,11],[11,3],[0,10],[9,12],[12,6],[13,9],[5,13]];
-  const ccCtx=cc.getContext('2d');
+
+  function makeAll(){
+    const W=sf.width,H=sf.height;
+    makeStars();makeNebulae(W,H);makePlanets(W,H);makeAsteroids(W,H);makeOrbits();
+  }
+  makeAll();
+
   let tick=0;
+
+  /* ── DRAW PLANET ── */
+  function drawPlanet(ctx,p){
+    const {x,y,r}=p;
+    if(p.rings){
+      ctx.save();ctx.translate(x,y);
+      ctx.beginPath();ctx.ellipse(0,0,p.ringRx,p.ringRy,0,Math.PI*2,false);
+      ctx.strokeStyle=p.ringColor;ctx.lineWidth=4;ctx.stroke();ctx.restore();
+    }
+    const g=ctx.createRadialGradient(x-r*0.3,y-r*0.35,r*0.05,x,y,r);
+    g.addColorStop(0,lighten(p.bands[0],40));
+    g.addColorStop(0.5,p.bands[0]);
+    g.addColorStop(1,darken(p.bands[1]||p.bands[0],20));
+    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    ctx.save();ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.clip();
+    [0.3,0.55,0.78].forEach(t=>{
+      ctx.beginPath();ctx.moveTo(x-r,y-r+t*r*2);ctx.lineTo(x+r,y-r+t*r*2);
+      ctx.strokeStyle='rgba(0,0,0,0.09)';ctx.lineWidth=r*0.22;ctx.stroke();
+    });
+    ctx.restore();
+    const hl=ctx.createRadialGradient(x-r*0.4,y-r*0.4,0,x,y,r);
+    hl.addColorStop(0,'rgba(255,255,255,0.22)');hl.addColorStop(0.5,'rgba(255,255,255,0.04)');hl.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=hl;ctx.fill();
+  }
+
+  function lighten(hex,amt){
+    const r=Math.min(255,parseInt(hex.slice(1,3),16)+amt);
+    const g=Math.min(255,parseInt(hex.slice(3,5),16)+amt);
+    const b=Math.min(255,parseInt(hex.slice(5,7),16)+amt);
+    return `rgb(${r},${g},${b})`;
+  }
+  function darken(hex,amt){
+    const r=Math.max(0,parseInt(hex.slice(1,3),16)-amt);
+    const g=Math.max(0,parseInt(hex.slice(3,5),16)-amt);
+    const b=Math.max(0,parseInt(hex.slice(5,7),16)-amt);
+    return `rgb(${r},${g},${b})`;
+  }
+  function hexAlpha(hex,a){
+    const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+    return `rgba(${r},${g},${b},${a})`;
+  }
+
+  /* ── MAIN DRAW LOOP ── */
   function drawFrame(){
     tick++;
     const W=sf.width,H=sf.height;
+
+    /* STARFIELD */
     sfCtx.clearRect(0,0,W,H);
-    stars.forEach(s=>{
-      const alpha=s.base+(s.base*0.8)*Math.sin(tick*s.speed+s.phase);
-      if(Math.sin(tick*s.speed*3+s.phase)>0.92){const shimmer=sfCtx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*3);shimmer.addColorStop(0,`rgba(255,255,255,${alpha*0.6})`);shimmer.addColorStop(1,'rgba(255,255,255,0)');sfCtx.beginPath();sfCtx.arc(s.x,s.y,s.r*2.5,0,Math.PI*2);sfCtx.fillStyle=shimmer;sfCtx.fill();}
-      sfCtx.beginPath();sfCtx.arc(s.x,s.y,s.r,0,Math.PI*2);sfCtx.fillStyle=`rgba(255,255,255,${Math.min(1,alpha)})`;sfCtx.fill();
+
+    nebulae.forEach(n=>{
+      const g=sfCtx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+      g.addColorStop(0,n.c);g.addColorStop(1,'rgba(0,0,0,0)');
+      sfCtx.beginPath();sfCtx.arc(n.x,n.y,n.r,0,Math.PI*2);sfCtx.fillStyle=g;sfCtx.fill();
     });
+
+    stars.forEach(s=>{
+      const alpha=Math.min(1,s.base+(s.base*0.85)*Math.sin(tick*s.speed+s.phase));
+      if(s.big){
+        /* big star: glow halo + cross flare */
+        const halo=sfCtx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
+        halo.addColorStop(0,`rgba(255,255,255,${alpha*0.5})`);
+        halo.addColorStop(0.3,s.color.startsWith('#')?hexAlpha(s.color,alpha*0.15):`rgba(200,210,255,${alpha*0.1})`);
+        halo.addColorStop(1,'rgba(0,0,0,0)');
+        sfCtx.beginPath();sfCtx.arc(s.x,s.y,s.r*5,0,Math.PI*2);sfCtx.fillStyle=halo;sfCtx.fill();
+        /* 4-point flare */
+        sfCtx.save();sfCtx.strokeStyle=`rgba(255,255,255,${alpha*0.4})`;sfCtx.lineWidth=0.6;
+        for(let a=0;a<4;a++){
+          const ang=a*Math.PI/4;
+          sfCtx.beginPath();sfCtx.moveTo(s.x,s.y);
+          sfCtx.lineTo(s.x+Math.cos(ang)*s.r*8,s.y+Math.sin(ang)*s.r*8);sfCtx.stroke();
+        }
+        sfCtx.restore();
+      } else if(s.mid&&Math.sin(tick*s.speed*2+s.phase)>0.7){
+        const shimmer=sfCtx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*3);
+        shimmer.addColorStop(0,`rgba(255,255,255,${alpha*0.55})`);
+        shimmer.addColorStop(1,'rgba(0,0,0,0)');
+        sfCtx.beginPath();sfCtx.arc(s.x,s.y,s.r*3,0,Math.PI*2);sfCtx.fillStyle=shimmer;sfCtx.fill();
+      }
+      sfCtx.beginPath();sfCtx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      sfCtx.fillStyle=s.color.startsWith('#')?hexAlpha(s.color,alpha):`rgba(255,255,255,${alpha})`;
+      sfCtx.fill();
+    });
+
+    /* SHOOTING STARS */
+    maybeShoot(W,H);
+    shooters=shooters.filter(sh=>{
+      sh.x+=sh.vx;sh.y+=sh.vy;sh.life-=0.014;
+      if(sh.life<=0||sh.x<-200||sh.x>W+200||sh.y>H+100)return false;
+      const tailX=sh.x-sh.vx*(sh.maxLen/Math.abs(sh.vx));
+      const tailY=sh.y-sh.vy*(sh.maxLen/Math.abs(sh.vx));
+      const tail=sfCtx.createLinearGradient(tailX,tailY,sh.x,sh.y);
+      tail.addColorStop(0,'rgba(255,255,255,0)');
+      tail.addColorStop(0.7,`rgba(255,255,255,${sh.life*0.5})`);
+      tail.addColorStop(1,`rgba(255,255,255,${sh.life})`);
+      sfCtx.beginPath();sfCtx.moveTo(tailX,tailY);sfCtx.lineTo(sh.x,sh.y);
+      sfCtx.strokeStyle=tail;sfCtx.lineWidth=1.8;sfCtx.stroke();
+      /* head glow */
+      sfCtx.beginPath();sfCtx.arc(sh.x,sh.y,2.5,0,Math.PI*2);
+      sfCtx.fillStyle=`rgba(255,255,255,${sh.life*0.9})`;sfCtx.fill();
+      return true;
+    });
+
+    /* CONSTELLATION LAYER */
     ccCtx.clearRect(0,0,W,H);
-    arcs.forEach(([a,b],i)=>{const na=nodes[a],nb=nodes[b];const ax=na.x*W,ay=na.y*H,bx=nb.x*W,by=nb.y*H;const mx=(ax+bx)/2+(i%2===0?W*.04:-W*.04);const my=(ay+by)/2-H*.02;const pulse=0.12+0.06*Math.sin(tick*0.018+i);ccCtx.beginPath();ccCtx.moveTo(ax,ay);ccCtx.quadraticCurveTo(mx,my,bx,by);ccCtx.strokeStyle=`rgba(140,130,240,${pulse})`;ccCtx.lineWidth=0.9;ccCtx.stroke();});
-    nodes.forEach((n,i)=>{const x=n.x*W,y=n.y*H;const pulse=n.pulse?1+0.22*Math.sin(tick*.045):1;const r=n.r*pulse;if(n.ring){const gp=0.15+0.12*Math.sin(tick*.04);ccCtx.beginPath();ccCtx.arc(x,y,r+10,0,Math.PI*2);ccCtx.strokeStyle=`rgba(120,112,230,${gp})`;ccCtx.lineWidth=1;ccCtx.stroke();}ccCtx.beginPath();ccCtx.arc(x,y,r+5,0,Math.PI*2);ccCtx.fillStyle=n.c+'28';ccCtx.fill();ccCtx.beginPath();ccCtx.arc(x,y,r,0,Math.PI*2);ccCtx.fillStyle=n.c;ccCtx.fill();ccCtx.font=`400 11px 'DM Sans',sans-serif`;ccCtx.fillStyle='rgba(200,195,220,0.85)';ccCtx.textAlign='center';ccCtx.fillText(n.label,x,y+r+14);});
+
+    /* planets */
+    planets.forEach(p=>drawPlanet(ccCtx,p));
+
+    /* asteroids */
+    asteroids.forEach(a=>{
+      const x=a.cx+Math.cos(a.ang)*a.ra;
+      const y=a.cy+Math.sin(a.ang)*a.rb;
+      const flicker=a.alpha*(0.7+0.3*Math.sin(tick*0.06+a.phase));
+      ccCtx.beginPath();ccCtx.arc(x,y,a.r,0,Math.PI*2);
+      ccCtx.fillStyle=`rgba(${a.color},${flicker})`;ccCtx.fill();
+      a.ang+=a.speed;
+    });
+
+    /* orbital particles around nodes */
+    orbits.forEach(o=>{
+      const n=nodes[o.ni];
+      const nx=n.x*W,ny=n.y*H;
+      const ox=nx+Math.cos(o.ang)*o.radius;
+      const oy=ny+Math.sin(o.ang)*o.radius;
+      const pulse=o.alpha*(0.6+0.4*Math.sin(tick*0.04+o.ang));
+      ccCtx.beginPath();ccCtx.arc(ox,oy,o.r,0,Math.PI*2);
+      ccCtx.fillStyle=hexAlpha(o.color,pulse);ccCtx.fill();
+      o.ang+=o.speed;
+    });
+
+    /* arcs — animated gradient colour */
+    arcs.forEach(([a,b],i)=>{
+      const na=nodes[a],nb=nodes[b];
+      const ax=na.x*W,ay=na.y*H,bx=nb.x*W,by=nb.y*H;
+      const mx=(ax+bx)/2+(i%2===0?W*.05:-W*.05);
+      const my=(ay+by)/2-H*.025;
+      const pulse=0.22+0.14*Math.sin(tick*0.016+i*0.7);
+      /* flow animation: shift colour along arc */
+      const flow=(tick*0.008+i*0.4)%1;
+      const grad=ccCtx.createLinearGradient(ax,ay,bx,by);
+      grad.addColorStop(0,hexAlpha(nodes[a].c,pulse*0.8));
+      grad.addColorStop(Math.max(0,flow-0.1),'rgba(255,255,255,0.05)');
+      grad.addColorStop(flow,`rgba(255,255,255,${pulse*0.9})`);
+      grad.addColorStop(Math.min(1,flow+0.1),'rgba(255,255,255,0.05)');
+      grad.addColorStop(1,hexAlpha(nodes[b].c,pulse*0.8));
+      ccCtx.beginPath();ccCtx.moveTo(ax,ay);ccCtx.quadraticCurveTo(mx,my,bx,by);
+      ccCtx.strokeStyle=grad;ccCtx.lineWidth=1.4;ccCtx.stroke();
+    });
+
+    /* nodes */
+    nodes.forEach((n,i)=>{
+      const x=n.x*W,y=n.y*H;
+      const pulseFactor=n.pulse?1+0.3*Math.sin(tick*0.038):1+0.08*Math.sin(tick*0.025+i);
+      const r=n.r*pulseFactor;
+      /* outer glow */
+      const glow=ccCtx.createRadialGradient(x,y,0,x,y,r*3.5);
+      glow.addColorStop(0,hexAlpha(n.c,0.35));
+      glow.addColorStop(0.5,hexAlpha(n.c,0.08));
+      glow.addColorStop(1,'rgba(0,0,0,0)');
+      ccCtx.beginPath();ccCtx.arc(x,y,r*3.5,0,Math.PI*2);ccCtx.fillStyle=glow;ccCtx.fill();
+      /* double ring for You */
+      if(n.ring){
+        const rp1=0.28+0.18*Math.sin(tick*0.032);
+        const rp2=0.14+0.1*Math.sin(tick*0.025+1);
+        ccCtx.beginPath();ccCtx.arc(x,y,r+14,0,Math.PI*2);
+        ccCtx.strokeStyle=hexAlpha(n.c,rp1);ccCtx.lineWidth=1.8;ccCtx.stroke();
+        ccCtx.beginPath();ccCtx.arc(x,y,r+26,0,Math.PI*2);
+        ccCtx.strokeStyle=hexAlpha(n.c,rp2);ccCtx.lineWidth=1;ccCtx.stroke();
+        /* rotating dash ring */
+        ccCtx.save();ccCtx.translate(x,y);ccCtx.rotate(tick*0.015);
+        ccCtx.setLineDash([6,10]);
+        ccCtx.beginPath();ccCtx.arc(0,0,r+20,0,Math.PI*2);
+        ccCtx.strokeStyle=hexAlpha(n.c,0.2);ccCtx.lineWidth=1;ccCtx.stroke();
+        ccCtx.setLineDash([]);ccCtx.restore();
+      }
+      /* halo */
+      ccCtx.beginPath();ccCtx.arc(x,y,r+5,0,Math.PI*2);
+      ccCtx.fillStyle=hexAlpha(n.c,0.22);ccCtx.fill();
+      /* core gradient */
+      const cg=ccCtx.createRadialGradient(x-r*0.3,y-r*0.35,0,x,y,r);
+      cg.addColorStop(0,lighten(n.c,55));
+      cg.addColorStop(0.6,n.c);
+      cg.addColorStop(1,darken(n.c,15));
+      ccCtx.beginPath();ccCtx.arc(x,y,r,0,Math.PI*2);ccCtx.fillStyle=cg;ccCtx.fill();
+      /* label with shadow */
+      const sz=n.labelSize||12;
+      ccCtx.font=`600 ${sz}px 'DM Sans',sans-serif`;
+      ccCtx.textAlign='center';
+      ccCtx.shadowColor='rgba(0,0,0,0.95)';ccCtx.shadowBlur=8;
+      ccCtx.fillStyle='rgba(240,236,255,0.98)';
+      ccCtx.fillText(n.label,x,y+r+sz+5);
+      ccCtx.shadowBlur=0;
+    });
+
     requestAnimationFrame(drawFrame);
   }
+
   drawFrame();
 }
 
