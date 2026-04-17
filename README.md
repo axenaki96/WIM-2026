@@ -1,2 +1,2 @@
 # WIM-2026
-Live QA for WIM
+WIM live interactive polling session
